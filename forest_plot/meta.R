@@ -17,35 +17,35 @@ font_add_google("Covered By Your Grace", "grace")
 font_add_google("Rock Salt", "rock")
 showtext_auto()
 showtext_opts(dpi = 96)
-setwd("D:/¿Î±¾/ÓëÍ¬Ñ§µÄºÏ×÷ÏîÄ¿/ËßÕĞÒş/µÚ¶şÆªmeta/ĞÂ/Í¼Æ¬/É­ÁÖÍ¼")
-Êı¾İ <- read_delim("D:/¿Î±¾/ÓëÍ¬Ñ§µÄºÏ×÷ÏîÄ¿/ËßÕĞÒş/µÚ¶şÆªmeta/ĞÂ/Êı¾İ/Êı¾İ.txt", delim = "\t", escape_double = FALSE, trim_ws = TRUE)
+setwd("D:/è¯¾æœ¬/ä¸åŒå­¦çš„åˆä½œé¡¹ç›®/è¯‰æ‹›éš/ç¬¬äºŒç¯‡meta/æ–°/å›¾ç‰‡/æ£®æ—å›¾")
+æ•°æ® <- read_delim("D:/è¯¾æœ¬/ä¸åŒå­¦çš„åˆä½œé¡¹ç›®/è¯‰æ‹›éš/ç¬¬äºŒç¯‡meta/æ–°/æ•°æ®/æ•°æ®.txt", delim = "\t", escape_double = FALSE, trim_ws = TRUE)
 #variables <- c("BBS", "FMA", "POMA-Balance", "TUG", "S-TIS2.0", "S-PASS", "S_FIST", "ABC")
-variables <- Êı¾İ %>%
-  select(ÊıÖµÀà±ğ) %>%
+variables <- æ•°æ® %>%
+  select(æ•°å€¼ç±»åˆ«) %>%
   unique() %>%
   unlist()
 variables
-width <- 13  # Í¼ĞÎ¿í¶È£¨Ó¢´ç£©
-height <- 6 # Í¼ĞÎ¸ß¶È£¨Ó¢´ç£©
-res <- 1000 # ·Ö±æÂÊ£¨dpi£©
+width <- 13  # å›¾å½¢å®½åº¦ï¼ˆè‹±å¯¸ï¼‰
+height <- 6 # å›¾å½¢é«˜åº¦ï¼ˆè‹±å¯¸ï¼‰
+res <- 1000 # åˆ†è¾¨ç‡ï¼ˆdpiï¼‰
 for (i in variables) {
-subset_data <- Êı¾İ[Êı¾İ$ÊıÖµÀà±ğ == i, ]
-# Ñ­»·±éÀúÃ¿¸ö±äÁ¿
-m <- metacont(n.e = ÀıÊı...5,      #´Ë´¦ÊÇÎÒ×Ô¼ºĞŞ¸ÄµÄ£¬ÒòÎª°æ±¾¸üµü£¬¸÷ÖÖ²ÎÊıµÄÃû³ÆÂÔÓĞ±ä»¯ÁË
-              mean.e = ¾ùÊı...6,  #·Ö±ğ´ú±íÊµÑé×é£º¶ÔÕÕ×éµÄÆ½¾ùÖµ£¬sd£¬×ÜÑù±¾Á¿
-              sd.e  = ±ê×¼²î...7, 
-              n.c=ÀıÊı...8, 
-              mean.c = ¾ùÊı...9, 
-              sd.c=±ê×¼²î...10,
-              studlab=paste(µÚÒ»×÷Õß, ·¢±íÊ±¼ä), #ÕâÁ½ÁĞ·Ö±ğÊÇ×÷ÕßÃû×ÖºÍÄê·İ
-              data=subset_data) #Êı¾İÊÇÎÒ×Ô¼ºËæ±ã´ÓÍøÉÏ³­À´µÄ£¬»»³É´ó¼Ò×Ô¼ºµÄ¾ÍĞĞ
-settings.meta("Revman5")  # ÉèÖÃmeta¸ñÊ½Îª¾­µäµÄrevmanĞ¡ÂÌÍ¼£¬ºÙºÙ
+subset_data <- æ•°æ®[æ•°æ®$æ•°å€¼ç±»åˆ« == i, ]
+# å¾ªç¯éå†æ¯ä¸ªå˜é‡
+m <- metacont(n.e = ä¾‹æ•°...5,      #æ­¤å¤„æ˜¯æˆ‘è‡ªå·±ä¿®æ”¹çš„ï¼Œå› ä¸ºç‰ˆæœ¬æ›´è¿­ï¼Œå„ç§å‚æ•°çš„åç§°ç•¥æœ‰å˜åŒ–äº†
+              mean.e = å‡æ•°...6,  #åˆ†åˆ«ä»£è¡¨å®éªŒç»„ï¼šå¯¹ç…§ç»„çš„å¹³å‡å€¼ï¼Œsdï¼Œæ€»æ ·æœ¬é‡
+              sd.e  = æ ‡å‡†å·®...7, 
+              n.c=ä¾‹æ•°...8, 
+              mean.c = å‡æ•°...9, 
+              sd.c=æ ‡å‡†å·®...10,
+              studlab=paste(ç¬¬ä¸€ä½œè€…, å‘è¡¨æ—¶é—´), #è¿™ä¸¤åˆ—åˆ†åˆ«æ˜¯ä½œè€…åå­—å’Œå¹´ä»½
+              data=subset_data) #æ•°æ®
+settings.meta("Revman5")  # è®¾ç½®metaæ ¼å¼ä¸ºç»å…¸çš„revmanå°ç»¿å›¾ï¼Œå˜¿å˜¿
 pdf(file = paste(i, "_forest_plot.pdf", sep = ""), width = width, height = height, pointsize = 12)
 forest_plot <- forest(m,
-       squaresize = 0.4,  #ÉèÖÃ·½¿é´óĞ¡
+       squaresize = 0.4,  #è®¾ç½®æ–¹å—å¤§å°
        label.left = "Favours [Cortical screw]", 
        label.right = "Favours [Pedicle screw]",
-       fixed = T) #Êı¾İi·½ºÜ´ó£¬Ö»¿´Ëæ»úĞ§Ó¦Ä£ĞÍ¾Í¼Ó´ËÃüÁî£»·´Ö®Îªrandom =F
+       fixed = T) #æ•°æ®iæ–¹å¾ˆå¤§ï¼Œåªçœ‹éšæœºæ•ˆåº”æ¨¡å‹å°±åŠ æ­¤å‘½ä»¤ï¼›åä¹‹ä¸ºrandom =F
 dev.off()
 }
 
